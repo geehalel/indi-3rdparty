@@ -199,16 +199,16 @@ uint32_t Skywatcher::GetDEPeriod()
 
 uint32_t Skywatcher::GetlastreadRAIndexer()
 {
-    if (MountCode != 0x04 && MountCode != 0x05)
-        throw EQModError(EQModError::ErrInvalidCmd, "Incorrect mount type");
+    //if (MountCode != 0x04 && MountCode != 0x05)
+    //    throw EQModError(EQModError::ErrInvalidCmd, "Incorrect mount type");
     DEBUGF(telescope->DBG_SCOPE_STATUS, "%s() = %ld", __FUNCTION__, static_cast<long>(lastreadIndexer[Axis1]));
     return lastreadIndexer[Axis1];
 }
 
 uint32_t Skywatcher::GetlastreadDEIndexer()
 {
-    if (MountCode != 0x04 && MountCode != 0x05)
-        throw EQModError(EQModError::ErrInvalidCmd, "Incorrect mount type");
+    //if (MountCode != 0x04 && MountCode != 0x05)
+    //    throw EQModError(EQModError::ErrInvalidCmd, "Incorrect mount type");
     DEBUGF(telescope->DBG_SCOPE_STATUS, "%s() = %ld", __FUNCTION__, static_cast<long>(lastreadIndexer[Axis2]));
     return lastreadIndexer[Axis2];
 }

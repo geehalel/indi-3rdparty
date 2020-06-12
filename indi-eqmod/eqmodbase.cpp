@@ -2910,9 +2910,12 @@ bool EQMod::ISNewSwitch(const char *dev, const char *name, ISState *states, char
                     TrackState = SCOPE_AUTOHOMING;
                     try
                     {
-                        LOG_INFO("AutoHome phase 1: turning off aux encoders");
-                        mount->TurnRAEncoder(false);
-                        mount->TurnDEEncoder(false);
+                        if (mount->HasAuxEncoders())
+                        {
+                            LOG_INFO("AutoHome phase 1: turning off aux encoders");
+                            mount->TurnRAEncoder(false);
+                            mount->TurnDEEncoder(false);
+                        }
                         LOG_INFO("AutoHome phase 1: resetting home position indexes");
                         mount->ResetRAIndexer();
                         mount->ResetDEIndexer();
